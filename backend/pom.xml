@@ -15,6 +15,7 @@
         <module>business</module>
         <module>model</module>
         <module>wrest</module>
+        <module>database</module>
     </modules>
 
     <properties>
