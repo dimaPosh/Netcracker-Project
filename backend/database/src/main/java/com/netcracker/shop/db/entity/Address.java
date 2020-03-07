@@ -16,25 +16,25 @@ import javax.persistence.Id;
  * @since 0.0.1
  */
 @Entity(name = "ADDRESSES")
-public class Addresses {
+public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SHOP_SEQUENCE")
     @Column(name = "ADDRESS_ID")
     private Integer id;
 
-    @Column(name = "APARTMENT")
+    @Column(name = "APARTMENT", nullable = false)
     private String apartment;
 
-    @Column(name = "HOME")
+    @Column(name = "HOME", nullable = false)
     private String home;
 
-    @Column(name = "STREET")
+    @Column(name = "STREET", nullable = false)
     private String street;
 
-    @Column(name = "CITY")
+    @Column(name = "CITY", nullable = false)
     private String city;
 
-    @Column(name = "COUNTRY")
+    @Column(name = "COUNTRY", nullable = false)
     private String country;
 
     /**
