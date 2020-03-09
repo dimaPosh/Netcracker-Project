@@ -45,7 +45,7 @@ public class User {
 
     @OneToMany
     @JoinColumn(name = "ADDRESS_ID")
-    private Set<Address> address_id;
+    private Set<Address> address;
 
 /*
     @JoinColumn(name = "CART_ID")
@@ -183,16 +183,16 @@ public class User {
      *
      * @return the address id
      */
-    public Set<Address> getAddress_id() {
-        return this.address_id;
+    public Set<Address> getAddress() {
+        return this.address;
     }
 
     /**
      * Sets address id.
      *
-     * @param address_id the address id
+     * @param address the address id
      */
-    public void setAddress_id(final Set<Address> address_id) {
-        this.address_id = address_id;
+    public void setAddress(final Set<Address> address) {
+        this.address = address;
     }
 }
