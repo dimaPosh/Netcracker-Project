@@ -11,10 +11,12 @@
     <modules>
         <module>qulice</module>
         <module>backend</module>
+        <module>frontend</module>
     </modules>
 
     <properties>
-        <org.mapstruct.version>1.3.1.Final</org.mapstruct.version>
+        <qulice.version>0.18.19</qulice.version>
+        <qulice.ext.version>1.0-SNAPSHOT</qulice.ext.version>
     </properties>
     
     <build>
@@ -25,13 +27,6 @@
                 <configuration>
                     <source>8</source>
                     <target>8</target>
-                    <annotationProcessorPaths>
-                        <path>
-                            <groupId>org.mapstruct</groupId>
-                            <artifactId>mapstruct-processor</artifactId>
-                            <version>${org.mapstruct.version}</version>
-                        </path>
-                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
         </plugins>
