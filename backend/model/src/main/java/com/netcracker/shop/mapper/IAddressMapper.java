@@ -12,7 +12,7 @@ import org.mapstruct.Mapping;
 /**
  * The interface Address mapper.
  */
-@Mapper()
+@Mapper
 public interface IAddressMapper {
 
     /**

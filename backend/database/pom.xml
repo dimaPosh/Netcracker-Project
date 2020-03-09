@@ -27,7 +27,7 @@
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
-            <version>${spring.data}</version>
+            <version>${springboot.version}</version>
         </dependency>
     </dependencies>
 

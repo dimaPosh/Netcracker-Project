@@ -22,6 +22,7 @@
         <qulice.version>0.18.19</qulice.version>
         <qulice.ext.version>1.0-SNAPSHOT</qulice.ext.version>
         <spring.version>5.1.9.RELEASE</spring.version>
+        <springboot.version>2.1.8.RELEASE</springboot.version>
     </properties>
 
     <profiles>
