@@ -8,6 +8,7 @@ import com.netcracker.shop.dto.AddressDto;
 import org.mapstruct.Mapper;
 import com.netcracker.shop.db.entity.Address;
 import org.mapstruct.Mapping;
+import org.mapstruct.factory.Mappers;
 
 /**
  * The interface Address mapper.
@@ -15,6 +16,7 @@ import org.mapstruct.Mapping;
 @Mapper
 public interface IAddressMapper {
 
+    IAddressMapper INSTANCE = Mappers.getMapper( IAddressMapper.class );
     /**
      * From dto address.
      *
