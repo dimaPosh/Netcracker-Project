@@ -60,7 +60,6 @@
     </profiles>
 
     <dependencies>
-
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>

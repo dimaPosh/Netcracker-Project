@@ -4,6 +4,7 @@
 
 package com.netcracker.shop.init;
 
+
 import org.springframework.boot.SpringApplication;
 
 /**
@@ -18,6 +19,7 @@ public final class EntryPoint {
      */
     private EntryPoint() {
     }
+
 
     /**
      * The entry point of application.
