@@ -8,6 +8,7 @@ import com.netcracker.shop.db.repository.IAddressRepository;
 import com.netcracker.shop.dto.AddressDto;
 import com.netcracker.shop.mapper.IAddressMapper;
 import com.netcracker.shop.service.IAddressService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,7 +17,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class AddressServiceImpl implements IAddressService {
 
+    @Autowired
     private final IAddressMapper addressMapper;
+    @Autowired
     private final IAddressRepository addressRepository;
 
     /**
@@ -25,7 +28,7 @@ public class AddressServiceImpl implements IAddressService {
      * @param addressMapper     the address mapper
      * @param addressRepository the address repository
      */
-    public AddressServiceImpl(IAddressMapper addressMapper, IAddressRepository addressRepository) {
+    public AddressServiceImpl(final IAddressMapper addressMapper, final IAddressRepository addressRepository) {
         this.addressMapper = addressMapper;
         this.addressRepository = addressRepository;
     }

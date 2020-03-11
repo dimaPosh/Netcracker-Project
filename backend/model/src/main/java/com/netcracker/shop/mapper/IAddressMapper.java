@@ -13,7 +13,7 @@ import org.mapstruct.factory.Mappers;
 /**
  * The interface Address mapper.
  */
-@Mapper
+@Mapper(componentModel = "spring")
 public interface IAddressMapper {
 
     IAddressMapper INSTANCE = Mappers.getMapper( IAddressMapper.class );

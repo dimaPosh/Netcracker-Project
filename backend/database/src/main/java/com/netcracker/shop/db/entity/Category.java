@@ -16,7 +16,7 @@ import javax.persistence.Id;
 @Entity(name = "CATEGORIES")
 public class Category {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SHOP_SEQUENCE")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CATEGORY_ID")
     private Integer id;
 

@@ -10,25 +10,4 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>database</artifactId>
-    <properties>
-        <spring.data>2.2.5.RELEASE</spring.data>
-    </properties>
-    <dependencies>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>5.4.12.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>com.oracle.ojdbc</groupId>
-            <artifactId>ojdbc8</artifactId>
-            <version>19.3.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-jpa</artifactId>
-            <version>${springboot.version}</version>
-        </dependency>
-    </dependencies>
-
 </project>

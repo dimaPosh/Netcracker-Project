@@ -36,7 +36,6 @@ public class AddressRest {
      */
     @GetMapping("/{id}")
     AddressDto getById(@PathVariable("id") int id) {
-        AddressDto addressDto = service.getById(id);
-        return addressDto;
+        return service.getById(id);
     }
 }

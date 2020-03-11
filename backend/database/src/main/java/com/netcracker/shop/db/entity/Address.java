@@ -20,7 +20,7 @@ import javax.persistence.Table;
 @Table(name = "ADDRESSES")
 public class Address {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SHOP_SEQUENCE")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ADDRESS_ID")
     private Integer id;
 
@@ -38,6 +38,9 @@ public class Address {
 
     @Column(name = "COUNTRY", nullable = false)
     private String country;
+
+    public Address() {
+    }
 
     /**
      * Gets id.
