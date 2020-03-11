@@ -5,6 +5,8 @@
 package com.netcracker.shop.init;
 
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 
 /**
@@ -19,7 +21,6 @@ public final class EntryPoint {
      */
     private EntryPoint() {
     }
-
 
     /**
      * The entry point of application.

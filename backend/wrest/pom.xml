@@ -17,12 +17,12 @@
         <dependency>
             <groupId>com.netcracker.shop</groupId>
             <artifactId>model</artifactId>
-            <version>${version}</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.netcracker.shop</groupId>
             <artifactId>business</artifactId>
-            <version>${version}</version>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 

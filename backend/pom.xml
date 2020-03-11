@@ -139,6 +139,7 @@
                             -Amapstruct.suppressGeneratorVersionInfoComment=true
                         </compilerArg>
                     </compilerArgs>
+
                 </configuration>
             </plugin>
         </plugins>
