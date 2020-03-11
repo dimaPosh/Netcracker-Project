@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
@@ -20,7 +21,8 @@ import javax.persistence.Table;
 @Table(name = "PRODUCTS")
 public class Product {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name = "shopSeq",sequenceName = "SHOP_SEQUENCE")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "shopSeq")
     @Column(name = "PRODUCT_ID")
     private Integer id;
 

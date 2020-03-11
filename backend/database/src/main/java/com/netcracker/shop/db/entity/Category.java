@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 
 /**
  * The type Category.
@@ -16,7 +17,8 @@ import javax.persistence.Id;
 @Entity(name = "CATEGORIES")
 public class Category {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name = "shopSeq",sequenceName = "SHOP_SEQUENCE")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "shopSeq")
     @Column(name = "CATEGORY_ID")
     private Integer id;
 

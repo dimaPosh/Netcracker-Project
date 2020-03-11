@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import java.util.Set;
 
@@ -21,7 +22,8 @@ import java.util.Set;
 @Table(name = "USERS")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name = "shopSeq",sequenceName = "SHOP_SEQUENCE")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "shopSeq")
     @Column(name = "USER_ID")
     private Integer id;
 
