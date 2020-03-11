@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    username         : C##IN_SHOP
+    password         : 123
+    url              : jdbc:oracle:thin:@localhost:1521:xe
+  jpa       :
+    database    : Oracle
+    open-in-view: false
+    show-sql    : true
+    hibernate   :
+      ddl-auto      : update
+      dialect       : org.hibernate.dialect.Oracle12cDialect

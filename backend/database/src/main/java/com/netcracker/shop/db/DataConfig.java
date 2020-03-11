@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EntityScan("com.netcracker.shop.db.entity")
 @ComponentScan("com.netcracker.shop")
-@PropertySource("classpath:application.properties")
+@PropertySource("classpath:hibernate.properties")
 @EnableJpaRepositories("com.netcracker.shop.db.repository")
 @EnableTransactionManagement
 public class DataConfig {

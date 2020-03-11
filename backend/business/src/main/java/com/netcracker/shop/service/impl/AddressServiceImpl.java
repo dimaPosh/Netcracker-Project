@@ -4,6 +4,7 @@
 
 package com.netcracker.shop.service.impl;
 
+import com.netcracker.shop.db.entity.Address;
 import com.netcracker.shop.db.repository.IAddressRepository;
 import com.netcracker.shop.dto.AddressDto;
 import com.netcracker.shop.mapper.IAddressMapper;
@@ -37,6 +38,9 @@ public class AddressServiceImpl implements IAddressService {
 
     @Override
     public AddressDto getById(int id) {
-        return addressMapper.INSTANCE.toDto(addressRepository.findById(id).orElse(null));
+        return addressMapper.INSTANCE.
+            toDto(addressRepository.
+                findById(id).
+                orElse(null));
     }
 }

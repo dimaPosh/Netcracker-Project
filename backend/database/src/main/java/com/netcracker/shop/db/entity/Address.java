@@ -41,6 +41,9 @@ public class Address {
     @Column(name = "COUNTRY", nullable = false)
     private String country;
 
+    /**
+     * Instantiates a new Address.
+     */
     public Address() {
     }
 

@@ -16,7 +16,11 @@ import org.mapstruct.factory.Mappers;
 @Mapper(componentModel = "spring")
 public interface IAddressMapper {
 
+    /**
+     * The constant INSTANCE.
+     */
     IAddressMapper INSTANCE = Mappers.getMapper( IAddressMapper.class );
+
     /**
      * From dto address.
      *
