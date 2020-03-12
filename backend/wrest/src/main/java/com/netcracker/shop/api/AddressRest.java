@@ -9,6 +9,8 @@ import com.netcracker.shop.service.IAddressService;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -38,5 +40,16 @@ public class AddressRest {
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     AddressDto getById(@PathVariable("id") int id) {
         return service.getById(id);
+    }
+
+    /**
+     * Create address dto.
+     *
+     * @param addressDto the address dto
+     * @return the address dto
+     */
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    AddressDto create(@RequestBody AddressDto addressDto) {
+        return service.createAddress(addressDto);
     }
 }

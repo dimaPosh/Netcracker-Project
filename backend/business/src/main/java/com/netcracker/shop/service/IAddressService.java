@@ -18,4 +18,12 @@ public interface IAddressService {
      * @return the by id
      */
     AddressDto getById(int id);
+
+    /**
+     * Create address address dto.
+     *
+     * @param addressDto the address dto
+     * @return the address dto
+     */
+    AddressDto createAddress(AddressDto addressDto);
 }

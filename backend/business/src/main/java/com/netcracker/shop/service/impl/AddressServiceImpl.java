@@ -43,4 +43,12 @@ public class AddressServiceImpl implements IAddressService {
                 findById(id).
                 orElse(null));
     }
+
+    @Override
+    public AddressDto createAddress(AddressDto addressDto) {
+        Address f = addressMapper.INSTANCE.fromDto(addressDto);
+        f = addressRepository.save(f);
+        addressDto.setId(f.getId());
+        return addressDto;
+    }
 }
