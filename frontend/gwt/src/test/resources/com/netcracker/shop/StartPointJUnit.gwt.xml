@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module rename-to="Main">
+<module rename-to="StartPoint">
   <!-- Inherit our applications main module.                      -->
-  <inherits name='war.Main' />
+  <inherits name='com.netcracker.shop.StartPoint' />
 
   <!-- Specify the path to any remote services.                   -->
-  <servlet path="/Main/greet" class="war.server.GreetingServiceImpl" />
+  <servlet path="/StartPoint/greet" class="com.netcracker.shop.server.GreetingServiceImpl" />
 
 </module>

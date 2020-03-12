@@ -1,6 +1,6 @@
-package war.client;
+package com.netcracker.shop.client;
 
-import war.shared.FieldVerifier;
+import com.netcracker.shop.shared.FieldVerifier;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -16,13 +16,13 @@ import com.google.gwt.user.client.rpc.ServiceDefTarget;
  * See https://gwt-maven-plugin.github.io/gwt-maven-plugin/user-guide/testing.html
  * for details.
  */
-public class GwtTestMain extends GWTTestCase {
+public class GwtTestStartPoint extends GWTTestCase {
 
   /**
    * Must refer to a valid module that sources this class.
    */
   public String getModuleName() {
-    return "war.MainJUnit";
+    return "com.netcracker.shop.StartPointJUnit";
   }
 
   /**
@@ -45,7 +45,7 @@ public class GwtTestMain extends GWTTestCase {
     // Create the service that we will test.
     GreetingServiceAsync greetingService = GWT.create(GreetingService.class);
     ServiceDefTarget target = (ServiceDefTarget) greetingService;
-    target.setServiceEntryPoint(GWT.getModuleBaseURL() + "Main/greet");
+    target.setServiceEntryPoint(GWT.getModuleBaseURL() + "StartPoint/greet");
 
     // Since RPC calls are asynchronous, we will need to wait for a response
     // after this test method returns. This line tells the test runner to wait

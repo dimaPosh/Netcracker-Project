@@ -1,6 +1,6 @@
-package war.client;
+package com.netcracker.shop.client;
 
-import war.shared.FieldVerifier;
+import com.netcracker.shop.shared.FieldVerifier;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -20,7 +20,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
-public class Main implements EntryPoint {
+public class StartPoint implements EntryPoint {
   /**
    * The message displayed to the user when the server cannot be reached or
    * returns an error.
@@ -32,7 +32,7 @@ public class Main implements EntryPoint {
   /**
    * Create a remote service proxy to talk to the server-side Greeting service.
    */
-  private final war.client.GreetingServiceAsync greetingService = GWT.create(GreetingService.class);
+  private final GreetingServiceAsync greetingService = GWT.create(GreetingService.class);
 
   private final Messages messages = GWT.create(Messages.class);
 

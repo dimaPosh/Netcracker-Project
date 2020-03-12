@@ -84,9 +84,9 @@
         <!-- Plugin configuration. There are many available options, see 
           gwt-maven-plugin documentation at codehaus.org -->
         <configuration>
-          <runTarget>Main.html</runTarget>
+          <runTarget>StartPoint.html</runTarget>
           <modules>
-            <module>war.Main</module>
+            <module>com.netcracker.shop.StartPoint</module>
           </modules>
         </configuration>
       </plugin>

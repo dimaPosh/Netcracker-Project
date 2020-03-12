@@ -8,17 +8,17 @@
   <!-- Servlets -->
   <servlet>
     <servlet-name>greetServlet</servlet-name>
-    <servlet-class>war.server.GreetingServiceImpl</servlet-class>
+    <servlet-class>com.netcracker.shop.server.GreetingServiceImpl</servlet-class>
   </servlet>
 
   <servlet-mapping>
     <servlet-name>greetServlet</servlet-name>
-    <url-pattern>/Main/greet</url-pattern>
+    <url-pattern>/StartPoint/greet</url-pattern>
   </servlet-mapping>
 
   <!-- Default page to serve -->
   <welcome-file-list>
-    <welcome-file>Main.html</welcome-file>
+    <welcome-file>StartPoint.html</welcome-file>
   </welcome-file-list>
 
 </web-app>

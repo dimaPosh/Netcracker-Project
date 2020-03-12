@@ -1,7 +1,7 @@
-package war.server;
+package com.netcracker.shop.server;
 
-import war.client.GreetingService;
-import war.shared.FieldVerifier;
+import com.netcracker.shop.client.GreetingService;
+import com.netcracker.shop.shared.FieldVerifier;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 /**

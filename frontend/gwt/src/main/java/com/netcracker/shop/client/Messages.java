@@ -1,4 +1,4 @@
-package war.client;
+package com.netcracker.shop.client;
 
 import com.google.gwt.i18n.client.LocalizableResource.Generate;
 
