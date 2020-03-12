@@ -1,4 +1,4 @@
-package war.shared;
+package com.netcracker.shop.shared;
 
 /**
  * <p>

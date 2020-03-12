@@ -11,43 +11,7 @@
     <packaging>pom</packaging>
     <artifactId>frontend</artifactId>
 
-    <modules>
-        <module>gwt</module>
-    </modules>
 
-    <profiles>
-        <profile>
-            <id>Qulice</id>
-            <properties>
-                <qulice.version>0.18.19</qulice.version>
-                <qulice.ext.version>1.0-SNAPSHOT</qulice.ext.version>
-            </properties>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>com.qulice</groupId>
-                        <artifactId>qulice-maven-plugin</artifactId>
-                        <version>${qulice.version}</version>
-                        <configuration>
-                            <license>LICENSE.txt</license>
-                        </configuration>
-                        <dependencies>
-                            <dependency>
-                                <groupId>com.netcracker.shop</groupId>
-                                <artifactId>qulice</artifactId>
-                                <version>${qulice.ext.version}</version>
-                            </dependency>
-                        </dependencies>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>check</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
+<modules>  <module>gwt</module>
+  </modules>
 </project>
