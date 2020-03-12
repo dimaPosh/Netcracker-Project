@@ -16,6 +16,7 @@
         <qulice.version>0.18.19</qulice.version>
         <qulice.ext.version>1.0-SNAPSHOT</qulice.ext.version>
         <mvn.comp.plag>3.8.1</mvn.comp.plag>
+        <java.version>1.8</java.version>
     </properties>
     
     <build>
@@ -25,8 +26,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${mvn.comp.plag}</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
         </plugins>
