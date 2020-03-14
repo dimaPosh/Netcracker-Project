@@ -13,6 +13,7 @@
     </modules>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <qulice.version>0.18.19</qulice.version>
         <qulice.ext.version>1.0-SNAPSHOT</qulice.ext.version>
         <mvn.comp.plag>3.8.1</mvn.comp.plag>

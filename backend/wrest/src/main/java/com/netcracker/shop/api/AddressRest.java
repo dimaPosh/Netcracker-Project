@@ -7,6 +7,7 @@ package com.netcracker.shop.api;
 import com.netcracker.shop.dto.AddressDto;
 import com.netcracker.shop.service.IAddressService;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,6 +38,7 @@ public class AddressRest {
      * @param id the id
      * @return the by id
      */
+    @CrossOrigin
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     AddressDto getById(@PathVariable("id") int id) {
         return service.getById(id);
@@ -48,6 +50,7 @@ public class AddressRest {
      * @param addressDto the address dto
      * @return the address dto
      */
+    @CrossOrigin
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     AddressDto create(@RequestBody AddressDto addressDto) {
         return service.createAddress(addressDto);
