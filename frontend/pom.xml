@@ -19,6 +19,7 @@
         <guice.version>3.0</guice.version>
         <jersey.version>1.13</jersey.version>
         <restygwt.version>2.2.0</restygwt.version>
+        <gwt.bootst.version>0.9</gwt.bootst.version>
     </properties>
     <modules>
         <module>gwt</module>

@@ -16,6 +16,12 @@
 
   <dependencies>
     <dependency>
+      <groupId>org.gwtbootstrap3</groupId>
+      <artifactId>gwtbootstrap3</artifactId>
+      <version>${gwt.bootst.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
       <groupId>org.fusesource.restygwt</groupId>
       <artifactId>restygwt</artifactId>
       <version>${restygwt.version}</version>
