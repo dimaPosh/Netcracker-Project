@@ -21,6 +21,31 @@ public class AddressDto {
     private String country;
 
     /**
+     * Instantiates a new Address dto.
+     */
+    public AddressDto() {
+    }
+
+    /**
+     * Instantiates a new Address dto.
+     *
+     * @param id        the id
+     * @param apartment the apartment
+     * @param home      the home
+     * @param street    the street
+     * @param city      the city
+     * @param country   the country
+     */
+    public AddressDto(Integer id, String apartment, String home, String street, String city, String country) {
+        this.id = id;
+        this.apartment = apartment;
+        this.home = home;
+        this.street = street;
+        this.city = city;
+        this.country = country;
+    }
+
+    /**
      * Gets id.
      *
      * @return the id
