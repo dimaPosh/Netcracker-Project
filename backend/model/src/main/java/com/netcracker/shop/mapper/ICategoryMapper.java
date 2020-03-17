@@ -10,15 +10,13 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
+import java.util.List;
+
 /**
  * The interface Category mapper.
  */
 @Mapper(componentModel = "spring")
 public interface ICategoryMapper {
-    /**
-     * The constant INSTANCE.
-     */
-    ICategoryMapper INSTANCE = Mappers.getMapper(ICategoryMapper.class);
 
     /**
      * From dto category.
@@ -36,4 +34,12 @@ public interface ICategoryMapper {
      * @return the category dto
      */
     CategoryDto toDto(Category category);
+
+    /**
+     * To get dto list.
+     *
+     * @param categories the categories
+     * @return the list
+     */
+    List<CategoryDto> toGetDto(List<Category> categories);
 }

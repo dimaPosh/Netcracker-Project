@@ -4,8 +4,8 @@
 
 package com.netcracker.shop.api;
 
-import com.netcracker.shop.dto.CategoryDto;
-import com.netcracker.shop.service.ICategoryService;
+import com.netcracker.shop.dto.CartDto;
+import com.netcracker.shop.service.ICartService;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,22 +15,21 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 /**
- * The type Category rest.
+ * The type Cart rest.
  */
 @RestController
-@RequestMapping("/category")
-public class CategoryRest {
-    private final ICategoryService service;
+@RequestMapping("/cart")
+public class CartRest {
+
+    private final ICartService service;
 
     /**
-     * Instantiates a new Category rest.
+     * Instantiates a new Cart rest.
      *
      * @param service the service
      */
-    public CategoryRest(ICategoryService service) {
+    public CartRest(ICartService service) {
         this.service = service;
     }
 
@@ -42,30 +41,20 @@ public class CategoryRest {
      */
     @CrossOrigin
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    CategoryDto getById(@PathVariable("id") int id) {
+    CartDto getById(@PathVariable("id") int id) {
         return service.getById(id);
     }
 
     /**
-     * Gets all.
+     * Create cart dto.
      *
-     * @return the all
-     */
-    @CrossOrigin
-    @GetMapping(path = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
-    List<CategoryDto> getAll() {
-        return service.getAll();
-    }
-
-    /**
-     * Create category dto.
-     *
-     * @param categoryDto the category dto
-     * @return the category dto
+     * @param cartDto the cart dto
+     * @return the cart dto
      */
     @CrossOrigin
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    CategoryDto create(@RequestBody CategoryDto categoryDto) {
-        return service.createCategory(categoryDto);
+    CartDto create(@RequestBody CartDto cartDto) {
+        CartDto cartDto1 = cartDto;
+        return service.createCart(cartDto);
     }
 }

@@ -1,35 +1,34 @@
+/*
+ * Copyright
+ */
+
 package com.netcracker.shop.db.entity;
+
+import org.hibernate.annotations.Immutable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import java.util.Set;
 
 /**
- * The type Category.
+ * The type Role.
  */
 @Entity
-@Table(name = "CATEGORIES")
-public class Category {
+@Immutable
+@Table(name = "ROLES")
+public class Role {
     @Id
-    @SequenceGenerator(name = "shopSeq", sequenceName = "SHOP_SEQUENCE")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "shopSeq")
-    @Column(name = "CATEGORY_ID")
+    @Column(name = "ROLE_ID")
     private Integer id;
 
     @Column(name = "NAME")
     private String name;
 
     /**
-     * Instantiates a new Category.
+     * Instantiates a new Role.
      */
-    public Category() {
+    public Role() {
     }
 
     /**

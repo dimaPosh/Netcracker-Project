@@ -6,6 +6,8 @@ package com.netcracker.shop.service;
 
 import com.netcracker.shop.dto.CategoryDto;
 
+import java.util.List;
+
 /**
  * The interface Category service.
  */
@@ -25,4 +27,11 @@ public interface ICategoryService {
      * @return the category dto
      */
     CategoryDto createCategory(CategoryDto categoryDto);
+
+    /**
+     * Gets all.
+     *
+     * @return the all
+     */
+    List<CategoryDto> getAll();
 }

@@ -4,33 +4,32 @@
 
 package com.netcracker.shop.api;
 
-import com.netcracker.shop.dto.CategoryDto;
-import com.netcracker.shop.service.ICategoryService;
+import com.netcracker.shop.dto.ProductDto;
+import com.netcracker.shop.service.IProductService;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 /**
- * The type Category rest.
+ * The type Product rest.
  */
 @RestController
-@RequestMapping("/category")
-public class CategoryRest {
-    private final ICategoryService service;
+@RequestMapping("/product")
+public class ProductRest {
+    private final IProductService service;
 
     /**
-     * Instantiates a new Category rest.
+     * Instantiates a new Product rest.
      *
      * @param service the service
      */
-    public CategoryRest(ICategoryService service) {
+    public ProductRest(IProductService service) {
         this.service = service;
     }
 
@@ -42,30 +41,31 @@ public class CategoryRest {
      */
     @CrossOrigin
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    CategoryDto getById(@PathVariable("id") int id) {
+    ProductDto getById(@PathVariable("id") int id) {
         return service.getById(id);
     }
 
     /**
      * Gets all.
      *
+     * @param category the category
      * @return the all
      */
     @CrossOrigin
-    @GetMapping(path = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
-    List<CategoryDto> getAll() {
-        return service.getAll();
+    @GetMapping(path = "/all/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    List<ProductDto> getAll(@PathVariable("id") int category) {
+        return service.getAll(category);
     }
 
     /**
-     * Create category dto.
+     * Create product dto.
      *
-     * @param categoryDto the category dto
-     * @return the category dto
+     * @param productDto the product dto
+     * @return the product dto
      */
     @CrossOrigin
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    CategoryDto create(@RequestBody CategoryDto categoryDto) {
-        return service.createCategory(categoryDto);
+    ProductDto create(ProductDto productDto) {
+        return service.create(productDto);
     }
 }

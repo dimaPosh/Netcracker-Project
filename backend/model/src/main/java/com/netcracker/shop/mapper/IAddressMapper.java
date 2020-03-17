@@ -10,16 +10,13 @@ import com.netcracker.shop.db.entity.Address;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
+import java.util.List;
+
 /**
  * The interface Address mapper.
  */
 @Mapper(componentModel = "spring")
 public interface IAddressMapper {
-
-    /**
-     * The constant INSTANCE.
-     */
-    IAddressMapper INSTANCE = Mappers.getMapper( IAddressMapper.class );
 
     /**
      * From dto address.
@@ -29,6 +26,14 @@ public interface IAddressMapper {
      */
     @Mapping(target = "id", ignore = true)
     Address fromDto(AddressDto addressDto);
+
+    /**
+     * To get dto list.
+     *
+     * @param addresses the addresses
+     * @return the list
+     */
+    List<AddressDto> toGetDto(List<Address> addresses);
 
     /**
      * To dto address dto.

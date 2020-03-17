@@ -6,6 +6,8 @@ package com.netcracker.shop.service;
 
 import com.netcracker.shop.dto.AddressDto;
 
+import java.util.List;
+
 /**
  * The interface Address service.
  */
@@ -18,6 +20,13 @@ public interface IAddressService {
      * @return the by id
      */
     AddressDto getById(int id);
+
+    /**
+     * Gets all.
+     *
+     * @return the all
+     */
+    List<AddressDto> getAll();
 
     /**
      * Create address address dto.

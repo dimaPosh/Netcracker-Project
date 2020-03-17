@@ -12,6 +12,8 @@ import com.netcracker.shop.service.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * The type Category service.
  */
@@ -36,17 +38,21 @@ public class CategoryServiceImpl implements ICategoryService {
 
     @Override
     public CategoryDto getById(int id) {
-        return mapper.INSTANCE.
-            toDto(repository.
-                findById(id).
-                orElse(null));
+        return mapper
+            .toDto(repository.findById(id)
+                .orElse(null));
     }
 
     @Override
     public CategoryDto createCategory(CategoryDto categoryDto) {
-        Category f = mapper.INSTANCE.fromDto(categoryDto);
+        Category f = mapper.fromDto(categoryDto);
         f = repository.save(f);
         categoryDto.setId(f.getId());
         return categoryDto;
+    }
+
+    @Override
+    public List<CategoryDto> getAll() {
+        return mapper.toGetDto(repository.findAll());
     }
 }

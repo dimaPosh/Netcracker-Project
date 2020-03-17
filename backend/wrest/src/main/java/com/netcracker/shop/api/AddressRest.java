@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * The type Address rest.
  */
@@ -42,6 +44,18 @@ public class AddressRest {
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     AddressDto getById(@PathVariable("id") int id) {
         return service.getById(id);
+    }
+
+
+    /**
+     * Gets all.
+     *
+     * @return the all
+     */
+    @CrossOrigin
+    @GetMapping(path = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
+    List<AddressDto> getAll() {
+        return service.getAll();
     }
 
     /**

@@ -1,3 +1,7 @@
+/*
+ * Copyright
+ */
+
 package com.netcracker.shop.db.entity;
 
 import javax.persistence.Column;
@@ -5,31 +9,28 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import java.util.Set;
 
 /**
- * The type Category.
+ * The type Cart.
  */
 @Entity
-@Table(name = "CATEGORIES")
-public class Category {
+@Table(name = "CARTS")
+public class Cart {
     @Id
     @SequenceGenerator(name = "shopSeq", sequenceName = "SHOP_SEQUENCE")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "shopSeq")
-    @Column(name = "CATEGORY_ID")
+    @Column(name = "CART_ID")
     private Integer id;
 
-    @Column(name = "NAME")
-    private String name;
+    @Column(name = "PROMO_CODE")
+    private String promo_code;
 
     /**
-     * Instantiates a new Category.
+     * Instantiates a new Cart.
      */
-    public Category() {
+    public Cart() {
     }
 
     /**
@@ -51,20 +52,20 @@ public class Category {
     }
 
     /**
-     * Gets name.
+     * Gets promo code.
      *
-     * @return the name
+     * @return the promo code
      */
-    public String getName() {
-        return name;
+    public String getPromo_code() {
+        return promo_code;
     }
 
     /**
-     * Sets name.
+     * Sets promo code.
      *
-     * @param name the name
+     * @param promo_code the promo code
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setPromo_code(String promo_code) {
+        this.promo_code = promo_code;
     }
 }

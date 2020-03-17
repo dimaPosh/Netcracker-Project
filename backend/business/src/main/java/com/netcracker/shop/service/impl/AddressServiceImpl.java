@@ -12,6 +12,8 @@ import com.netcracker.shop.service.IAddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * The type Address service.
  */
@@ -36,15 +38,19 @@ public class AddressServiceImpl implements IAddressService {
 
     @Override
     public AddressDto getById(int id) {
-        return mapper.INSTANCE.
-            toDto(repository.
-                findById(id).
-                orElse(null));
+        return mapper
+            .toDto(repository.findById(id)
+                .orElse(null));
+    }
+
+    @Override
+    public List<AddressDto> getAll() {
+        return mapper.toGetDto(repository.findAll());
     }
 
     @Override
     public AddressDto createAddress(AddressDto addressDto) {
-        Address f = mapper.INSTANCE.fromDto(addressDto);
+        Address f = mapper.fromDto(addressDto);
         f = repository.save(f);
         addressDto.setId(f.getId());
         return addressDto;
