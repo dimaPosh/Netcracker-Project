@@ -5,6 +5,7 @@
 package com.netcracker.shop.api;
 
 import com.netcracker.shop.dto.CartDto;
+import com.netcracker.shop.exception.NotFoundException;
 import com.netcracker.shop.service.ICartService;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -42,7 +43,11 @@ public class CartRest {
     @CrossOrigin
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     CartDto getById(@PathVariable("id") int id) {
-        return service.getById(id);
+        CartDto cartDto = service.getById(id);
+        if (cartDto == null) {
+            throw new NotFoundException();
+        }
+        return cartDto;
     }
 
     /**

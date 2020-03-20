@@ -4,9 +4,10 @@
 
 package com.netcracker.shop.api;
 
-import com.netcracker.shop.dto.ProductDto;
+import com.netcracker.shop.dto.RoleDto;
+import com.netcracker.shop.dto.UserDto;
 import com.netcracker.shop.exception.NotFoundException;
-import com.netcracker.shop.service.IProductService;
+import com.netcracker.shop.service.IUserService;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,19 +20,19 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * The type Product rest.
+ * The type User rest.
  */
 @RestController
-@RequestMapping("/product")
-public class ProductRest {
-    private final IProductService service;
+@RequestMapping("/user")
+public class UserRest {
+    private final IUserService service;
 
     /**
-     * Instantiates a new Product rest.
+     * Instantiates a new User rest.
      *
      * @param service the service
      */
-    public ProductRest(IProductService service) {
+    public UserRest(IUserService service) {
         this.service = service;
     }
 
@@ -43,39 +44,39 @@ public class ProductRest {
      */
     @CrossOrigin
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    ProductDto getById(@PathVariable("id") int id) {
-        ProductDto productDto = service.getById(id);
-        if (productDto == null) {
+    UserDto getById(@PathVariable("id") int id) {
+        UserDto userDto = service.getById(id);
+        if (userDto == null) {
             throw new NotFoundException();
         }
-        return productDto;
+        return userDto;
     }
 
     /**
      * Gets all.
      *
-     * @param category the category
      * @return the all
      */
     @CrossOrigin
-    @GetMapping(path = "/all/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    List<ProductDto> getAll(@PathVariable("id") int category) {
-        List<ProductDto> productDtos = service.getAll(category);
-        if (productDtos == null) {
+    @GetMapping(path = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
+    List<UserDto> getAll() {
+        List<UserDto> userDtos = service.getAll();
+        if (userDtos == null) {
             throw new NotFoundException();
         }
-        return productDtos;
+        return userDtos;
     }
 
     /**
-     * Create product dto.
+     * Create user dto.
      *
-     * @param productDto the product dto
-     * @return the product dto
+     * @param userDto the user dto
+     * @return the user dto
      */
     @CrossOrigin
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    ProductDto create(@RequestBody ProductDto productDto) {
-        return service.createProduct(productDto);
+    UserDto create(@RequestBody UserDto userDto) {
+        userDto.setRole(RoleDto.ADMIN);
+        return service.createUser(userDto);
     }
 }

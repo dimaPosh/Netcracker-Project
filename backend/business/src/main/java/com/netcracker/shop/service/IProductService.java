@@ -34,5 +34,5 @@ public interface IProductService {
      * @param productDto the product dto
      * @return the product dto
      */
-    ProductDto create(ProductDto productDto);
+    ProductDto createProduct(ProductDto productDto);
 }

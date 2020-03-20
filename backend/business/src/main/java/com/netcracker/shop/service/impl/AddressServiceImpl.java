@@ -31,7 +31,8 @@ public class AddressServiceImpl implements IAddressService {
      * @param mapper     the address mapper
      * @param repository the address repository
      */
-    public AddressServiceImpl(final IAddressMapper mapper, final IAddressRepository repository) {
+    public AddressServiceImpl(final IAddressMapper mapper,
+                              final IAddressRepository repository) {
         this.mapper = mapper;
         this.repository = repository;
     }

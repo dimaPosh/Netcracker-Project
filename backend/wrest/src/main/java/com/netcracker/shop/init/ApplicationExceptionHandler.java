@@ -1,8 +1,8 @@
 package com.netcracker.shop.init;
 
 import com.netcracker.shop.exception.NotFoundException;
-import com.netcracker.shop.model.Holder;
-import com.netcracker.shop.model.Violation;
+import com.netcracker.shop.exception.model.Holder;
+import com.netcracker.shop.exception.model.Violation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

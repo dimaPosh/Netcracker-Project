@@ -31,7 +31,8 @@ public class CategoryServiceImpl implements ICategoryService {
      * @param mapper     the mapper
      * @param repository the repository
      */
-    public CategoryServiceImpl(ICategoryMapper mapper, ICategoryRepository repository) {
+    public CategoryServiceImpl(ICategoryMapper mapper,
+                               ICategoryRepository repository) {
         this.mapper = mapper;
         this.repository = repository;
     }

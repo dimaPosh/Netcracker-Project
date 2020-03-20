@@ -4,34 +4,33 @@
 
 package com.netcracker.shop.api;
 
-import com.netcracker.shop.dto.ProductDto;
+import com.netcracker.shop.dto.CartDetailDto;
 import com.netcracker.shop.exception.NotFoundException;
-import com.netcracker.shop.service.IProductService;
+import com.netcracker.shop.service.ICartDetailService;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 /**
- * The type Product rest.
+ * The type Cart detail rest.
  */
 @RestController
-@RequestMapping("/product")
-public class ProductRest {
-    private final IProductService service;
+@RequestMapping("/cartdetail")
+public class CartDetailRest {
+    private final ICartDetailService service;
 
     /**
-     * Instantiates a new Product rest.
+     * Instantiates a new Cart detail rest.
      *
      * @param service the service
      */
-    public ProductRest(IProductService service) {
+    public CartDetailRest(ICartDetailService service) {
         this.service = service;
     }
 
@@ -43,39 +42,39 @@ public class ProductRest {
      */
     @CrossOrigin
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    ProductDto getById(@PathVariable("id") int id) {
-        ProductDto productDto = service.getById(id);
-        if (productDto == null) {
+    CartDetailDto getById(@PathVariable("id") int id) {
+        CartDetailDto cartDetailDto = service.getById(id);
+        if (cartDetailDto == null) {
             throw new NotFoundException();
         }
-        return productDto;
+        return cartDetailDto;
     }
 
     /**
      * Gets all.
      *
-     * @param category the category
+     * @param id the id
      * @return the all
      */
     @CrossOrigin
     @GetMapping(path = "/all/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    List<ProductDto> getAll(@PathVariable("id") int category) {
-        List<ProductDto> productDtos = service.getAll(category);
-        if (productDtos == null) {
+    List<CartDetailDto> getAll(@PathVariable("id") int id) {
+        List<CartDetailDto> cartDetailDtos = service.getAll(id);
+        if (cartDetailDtos == null) {
             throw new NotFoundException();
         }
-        return productDtos;
+        return cartDetailDtos;
     }
 
     /**
-     * Create product dto.
+     * Create cart detail dto.
      *
-     * @param productDto the product dto
-     * @return the product dto
+     * @param cartDetailDto the cart detail dto
+     * @return the cart detail dto
      */
     @CrossOrigin
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    ProductDto create(@RequestBody ProductDto productDto) {
-        return service.createProduct(productDto);
+    CartDetailDto create(CartDetailDto cartDetailDto) {
+        return service.createCartDetail(cartDetailDto);
     }
 }

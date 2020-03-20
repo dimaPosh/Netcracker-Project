@@ -20,7 +20,7 @@ import javax.persistence.Table;
 public class Role {
     @Id
     @Column(name = "ROLE_ID")
-    private Integer id;
+    private int id;
 
     @Column(name = "NAME")
     private String name;
@@ -32,11 +32,20 @@ public class Role {
     }
 
     /**
+     * Instantiates a new Role.
+     *
+     * @param id the id
+     */
+    public Role(final int id) {
+        this.id = id;
+    }
+
+    /**
      * Gets id.
      *
      * @return the id
      */
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
@@ -45,7 +54,7 @@ public class Role {
      *
      * @param id the id
      */
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 

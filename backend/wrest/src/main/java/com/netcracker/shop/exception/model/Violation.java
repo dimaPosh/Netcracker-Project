@@ -1,4 +1,4 @@
-package com.netcracker.shop.model;
+package com.netcracker.shop.exception.model;
 
 
 /**

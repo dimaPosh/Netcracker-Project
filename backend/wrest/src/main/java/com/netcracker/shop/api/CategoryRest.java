@@ -60,7 +60,11 @@ public class CategoryRest {
     @CrossOrigin
     @GetMapping(path = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
     List<CategoryDto> getAll() {
-        return service.getAll();
+        List<CategoryDto> categoryDtos = service.getAll();
+        if (categoryDtos == null) {
+            throw new NotFoundException();
+        }
+        return categoryDtos;
     }
 
     /**

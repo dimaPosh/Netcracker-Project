@@ -29,7 +29,8 @@ public class CartServiceImpl implements ICartService {
      * @param mapper     the mapper
      * @param repository the repository
      */
-    public CartServiceImpl(ICartMapper mapper, ICartRepository repository) {
+    public CartServiceImpl(ICartMapper mapper,
+                           ICartRepository repository) {
         this.mapper = mapper;
         this.repository = repository;
     }

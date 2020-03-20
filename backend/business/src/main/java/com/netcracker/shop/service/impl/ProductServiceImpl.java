@@ -31,7 +31,8 @@ public class ProductServiceImpl implements IProductService {
      * @param mapper     the mapper
      * @param repository the repository
      */
-    public ProductServiceImpl(IProductMapper mapper, IProductRepository repository) {
+    public ProductServiceImpl(IProductMapper mapper,
+                              IProductRepository repository) {
         this.mapper = mapper;
         this.repository = repository;
     }
@@ -49,7 +50,7 @@ public class ProductServiceImpl implements IProductService {
     }
 
     @Override
-    public ProductDto create(ProductDto productDto) {
+    public ProductDto createProduct(ProductDto productDto) {
         Product f = mapper.fromDto(productDto);
         f = repository.save(f);
         productDto.setId(f.getId());
