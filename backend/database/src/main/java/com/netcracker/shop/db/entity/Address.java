@@ -21,7 +21,7 @@ import javax.persistence.Table;
 @Table(name = "ADDRESSES")
 public class Address {
     @Id
-    @SequenceGenerator(name = "shopSeq",sequenceName = "SHOP_SEQUENCE")
+    @SequenceGenerator(name = "shopSeq", sequenceName = "SHOP_SEQUENCE", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "shopSeq")
     @Column(name = "ADDRESS_ID")
     private Integer id;

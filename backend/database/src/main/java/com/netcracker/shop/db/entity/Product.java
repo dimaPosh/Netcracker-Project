@@ -4,8 +4,12 @@
 
 package com.netcracker.shop.db.entity;
 
+import org.hibernate.ReplicationMode;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,7 +27,7 @@ import javax.persistence.Table;
 @Table(name = "PRODUCTS")
 public class Product {
     @Id
-    @SequenceGenerator(name = "shopSeq", sequenceName = "SHOP_SEQUENCE")
+    @SequenceGenerator(name = "shopSeq", sequenceName = "SHOP_SEQUENCE", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "shopSeq")
     @Column(name = "PRODUCT_ID")
     private Integer id;
@@ -43,8 +47,8 @@ public class Product {
     @Column(name = "COUNT")
     private Integer count;
 
-    @ManyToOne()
-    @JoinColumn(name = "CATEGORY_ID", foreignKey = @ForeignKey(name = "PROD_CAT_FK"))
+    @ManyToOne(cascade = {CascadeType.PERSIST}, fetch = FetchType.EAGER)
+    @JoinColumn(name = "CATEGORY_ID", foreignKey = @ForeignKey(name = "PROD_CAT_FK"), unique = true)
     private Category category;
 
     /**

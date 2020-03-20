@@ -19,7 +19,7 @@ import javax.persistence.Table;
 @Table(name = "CARTS")
 public class Cart {
     @Id
-    @SequenceGenerator(name = "shopSeq", sequenceName = "SHOP_SEQUENCE")
+    @SequenceGenerator(name = "shopSeq", sequenceName = "SHOP_SEQUENCE", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "shopSeq")
     @Column(name = "CART_ID")
     private Integer id;

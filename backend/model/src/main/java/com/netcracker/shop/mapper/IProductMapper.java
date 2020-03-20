@@ -25,6 +25,7 @@ public interface IProductMapper {
      * @return the product
      */
     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "category.id", ignore = false)
     Product fromDto(ProductDto productDto);
 
     /**

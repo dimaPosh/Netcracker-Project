@@ -18,12 +18,12 @@ import java.util.Set;
 @Table(name = "CATEGORIES")
 public class Category {
     @Id
-    @SequenceGenerator(name = "shopSeq", sequenceName = "SHOP_SEQUENCE")
+    @SequenceGenerator(name = "shopSeq", sequenceName = "SHOP_SEQUENCE", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "shopSeq")
     @Column(name = "CATEGORY_ID")
     private Integer id;
 
-    @Column(name = "NAME")
+    @Column(name = "NAME", unique = true)
     private String name;
 
     /**

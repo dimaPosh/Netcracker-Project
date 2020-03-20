@@ -27,6 +27,7 @@
         <javax.serv.api>3.1.0</javax.serv.api>
         <oracle.ojdbc>19.3.0.0</oracle.ojdbc>
         <jac.version>2.10.3</jac.version>
+        <javax.val.version>2.0.1.Final</javax.val.version>
     </properties>
 
     <profiles>
@@ -62,6 +63,12 @@
     </profiles>
 
     <dependencies>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>${javax.val.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>

@@ -5,6 +5,7 @@
 package com.netcracker.shop.api;
 
 import com.netcracker.shop.dto.CategoryDto;
+import com.netcracker.shop.exception.NotFoundException;
 import com.netcracker.shop.service.ICategoryService;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -34,6 +35,7 @@ public class CategoryRest {
         this.service = service;
     }
 
+
     /**
      * Gets by id.
      *
@@ -43,7 +45,11 @@ public class CategoryRest {
     @CrossOrigin
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     CategoryDto getById(@PathVariable("id") int id) {
-        return service.getById(id);
+        CategoryDto categoryDto = service.getById(id);
+        if (categoryDto == null) {
+            throw new NotFoundException();
+        }
+        return categoryDto;
     }
 
     /**
