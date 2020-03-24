@@ -56,7 +56,7 @@ public class User {
     @JoinColumn(name = "ADDRESS_ID", foreignKey = @ForeignKey(name = "US_AD_FK"))
     private Address address;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.DETACH)
     @JoinColumn(name = "CART_ID", foreignKey = @ForeignKey(name = "US_C_ID_FK"))
     private Cart cart;
 

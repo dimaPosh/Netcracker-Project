@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='StartPoint'>
+
+    <entry-point class='com.netcracker.shop.client.StartPoint' />
+    <inherits name='com.google.gwt.user.User'/>
+    <inherits name="com.google.gwt.inject.Inject"/>
+    <inherits name="org.fusesource.restygwt.RestyGWT"/>
+
+    <!-- Specify the paths for translatable code                    -->
+    <source path='client'/>
+    <source path='shared'/>
+
+    <!--GWT Material-->
+    <inherits name="gwt.material.design.GwtMaterialBasicWithJQuery"/>
+    <inherits name="gwt.material.design.addins.GwtMaterialAddins"/>
+    <inherits name="gwt.material.design.GwtMaterialTable"/>
+    <inherits name="gwt.material.design.themes.ThemeBlue"/>
+</module>

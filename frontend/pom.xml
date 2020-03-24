@@ -9,6 +9,9 @@
 
     <artifactId>frontend</artifactId>
     <packaging>pom</packaging>
+    <modules>
+    <module>gwt</module>
+  </modules>
 
     <properties>
         <gwt.version>2.8.2</gwt.version>
@@ -19,11 +22,8 @@
         <guice.version>3.0</guice.version>
         <jersey.version>1.13</jersey.version>
         <restygwt.version>2.2.0</restygwt.version>
-        <gwt.bootst.version>0.9</gwt.bootst.version>
+        <gwt.mat.vers>2.1.1</gwt.mat.vers>
     </properties>
-    <modules>
-        <module>gwt</module>
-    </modules>
 
     <profiles>
         <profile>

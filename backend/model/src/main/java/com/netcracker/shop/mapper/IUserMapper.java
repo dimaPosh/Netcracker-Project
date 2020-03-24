@@ -26,6 +26,7 @@ public interface IUserMapper {
      * @return the user
      */
     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "cart.id", ignore = false)
     User fromDto(UserDto userDto);
 
     /**

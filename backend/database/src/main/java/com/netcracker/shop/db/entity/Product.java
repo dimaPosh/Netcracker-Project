@@ -47,7 +47,7 @@ public class Product {
     @Column(name = "COUNT")
     private Integer count;
 
-    @ManyToOne(cascade = {CascadeType.PERSIST}, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = {CascadeType.DETACH}, fetch = FetchType.EAGER)
     @JoinColumn(name = "CATEGORY_ID", foreignKey = @ForeignKey(name = "PROD_CAT_FK"), unique = true)
     private Category category;
 
