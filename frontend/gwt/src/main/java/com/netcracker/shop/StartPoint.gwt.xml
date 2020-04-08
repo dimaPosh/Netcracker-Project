@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module rename-to='StartPoint'>
 
-    <entry-point class='com.netcracker.shop.client.StartPoint' />
+    <entry-point class='com.netcracker.shop.client.StartPoint'/>
     <inherits name='com.google.gwt.user.User'/>
     <inherits name="com.google.gwt.inject.Inject"/>
     <inherits name="org.fusesource.restygwt.RestyGWT"/>
@@ -9,7 +9,7 @@
     <!-- Specify the paths for translatable code                    -->
     <source path='client'/>
     <source path='shared'/>
-
+    <source path='server'/>
     <!--GWT Material-->
     <inherits name="gwt.material.design.GwtMaterialBasicWithJQuery"/>
     <inherits name="gwt.material.design.addins.GwtMaterialAddins"/>

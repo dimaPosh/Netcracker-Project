@@ -33,8 +33,8 @@ public class User {
     @Column(name = "LOGIN")
     private String login;
 
-    @Column(name = "PASSWORD", columnDefinition = "bpchar")
-    private char[] password;
+    @Column(name = "PASSWORD")
+    private String password;
 
     @Column(name = "FIRST_NAME")
     private String first_name;
@@ -107,7 +107,7 @@ public class User {
      *
      * @return the char [ ]
      */
-    public char[] getPassword() {
+    public String getPassword() {
         return password;
     }
 
@@ -116,7 +116,7 @@ public class User {
      *
      * @param password the password
      */
-    public void setPassword(char[] password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 

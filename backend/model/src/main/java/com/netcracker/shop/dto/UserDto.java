@@ -11,7 +11,7 @@ public class UserDto {
 
     private Integer id;
     private String login;
-    private char[] password;
+    private String password;
     private String first_name;
     private String last_name;
     private String email;
@@ -40,7 +40,7 @@ public class UserDto {
      * @param address      the address
      * @param cart         the cart
      */
-    public UserDto(Integer id, String login, char[] password, String first_name, String last_name, String email, String phone_number, RoleDto role, AddressDto address, CartDto cart) {
+    public UserDto(Integer id, String login, String password, String first_name, String last_name, String email, String phone_number, RoleDto role, AddressDto address, CartDto cart) {
         this.id = id;
         this.login = login;
         this.password = password;
@@ -94,7 +94,7 @@ public class UserDto {
      *
      * @return the char [ ]
      */
-    public char[] getPassword() {
+    public String getPassword() {
         return password;
     }
 
@@ -103,7 +103,7 @@ public class UserDto {
      *
      * @param password the password
      */
-    public void setPassword(char[] password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
