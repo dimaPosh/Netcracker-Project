@@ -10,6 +10,7 @@
     <source path='client'/>
     <source path='shared'/>
     <source path='server'/>
+    <source path='gin'/>
     <!--GWT Material-->
     <inherits name="gwt.material.design.GwtMaterialBasicWithJQuery"/>
     <inherits name="gwt.material.design.addins.GwtMaterialAddins"/>

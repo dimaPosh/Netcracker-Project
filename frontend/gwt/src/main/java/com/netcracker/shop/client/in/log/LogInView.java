@@ -4,6 +4,7 @@
 
 package com.netcracker.shop.client.in.log;
 
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
@@ -14,11 +15,12 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.netcracker.shop.server.model.LogInModel;
 import com.netcracker.shop.server.rest.LogInRest;
-import gwt.material.design.client.ui.MaterialButton;
-import gwt.material.design.client.ui.MaterialPanel;
 import gwt.material.design.client.ui.MaterialTextBox;
 import org.fusesource.restygwt.client.Method;
 import org.fusesource.restygwt.client.MethodCallback;
+import org.fusesource.restygwt.client.Resource;
+import org.fusesource.restygwt.client.RestServiceProxy;
+
 
 /**
  * The type Log in view.
@@ -44,8 +46,10 @@ public class LogInView extends Composite {
     /**
      * Instantiates a new Log in view.
      *
-     * @param rest   the rest
-     * @param binder the binder
+     * @param rest     the rest
+     * @param binder   the binder
+     * @param login    the login
+     * @param password the password
      */
     @Inject
     public LogInView(final LogInRest rest, final LogInViewUiBinder binder, final MaterialTextBox login, final MaterialTextBox password) {
@@ -72,6 +76,12 @@ public class LogInView extends Composite {
      */
     @UiHandler("LOG_IN")
     public void logInClick(final ClickEvent event) {
+        /*
+         final LogInRest workflowService = GWT.create(LogInRest.class);
+        final Resource workflowResource = new Resource("/workflows");
+        workflowResource.get().user("my_user_name").password("my_password");
+        ((RestServiceProxy)workflowService).setResource(workflowResource);
+         */
         final LogInModel model = new LogInModel();
         model.setLogin(this.login.getText());
         model.setPassword(this.password.getText());
@@ -80,7 +90,6 @@ public class LogInView extends Composite {
             public void onFailure(Method method, Throwable throwable) {
                 Window.alert("Error: " + throwable.getMessage());
             }
-
             @Override
             public void onSuccess(Method method, String s) {
                 Window.alert(s);
