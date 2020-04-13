@@ -15,24 +15,4 @@
 
     <artifactId>security</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-config</artifactId>
-            <version>${spring.sec.web}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-web</artifactId>
-            <version>${spring.sec.web}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.netcracker.shop</groupId>
-            <artifactId>database</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-    </dependencies>
-
-
 </project>

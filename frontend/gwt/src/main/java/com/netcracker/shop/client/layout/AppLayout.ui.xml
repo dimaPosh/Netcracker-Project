@@ -1,0 +1,24 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:m="urn:import:gwt.material.design.client.ui"
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+    <g:DockLayoutPanel unit="PX">
+        <g:north size="80">
+            <g:HTMLPanel styleName="b-app-header">
+                Онлайн магазин на диване "У ВАСИЛИЧА"
+            </g:HTMLPanel>
+        </g:north>
+
+        <g:west size="200">
+            <g:HTMLPanel styleName="b-app-navigator">
+                <a id="mail-view" href="#mail:">Mail</a>
+                <a id="contacts-view" href="#contacts:">Contacts</a>
+                <a id="tasks-view" href="#tasks:">Tasks</a>
+                <a id="product-view" href="#product:">Product</a>
+            </g:HTMLPanel>
+        </g:west>
+
+        <g:center>
+            <g:ScrollPanel  styleName="b-app-content" ui:field="appContent"/>
+        </g:center>
+    </g:DockLayoutPanel>
+</ui:UiBinder>
