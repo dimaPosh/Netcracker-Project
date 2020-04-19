@@ -42,7 +42,7 @@ public class Product {
     private String description;
 
     @Column(name = "IMAGE")
-    private byte[] image;
+    private String image;
 
     @Column(name = "COUNT")
     private Integer count;
@@ -134,7 +134,7 @@ public class Product {
      *
      * @return the byte [ ]
      */
-    public byte[] getImage() {
+    public String getImage() {
         return image;
     }
 
@@ -143,7 +143,7 @@ public class Product {
      *
      * @param image the image
      */
-    public void setImage(byte[] image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

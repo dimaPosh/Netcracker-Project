@@ -1,0 +1,33 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:m="urn:import:gwt.material.design.client.ui"
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+
+
+    <g:HorizontalPanel spacing="2">
+        <m:MaterialIcon iconType="ACCOUNT_CIRCLE" iconSize="LARGE"/>
+        <g:VerticalPanel spacing="2" width="400px">
+            <g:HTML>
+                <br>Логин</br>
+            </g:HTML>
+            <g:TextBox ui:field="login" enabled="false"/>
+            <g:HTML>
+            <br>Фамилия</br>
+            </g:HTML>
+            <g:TextBox ui:field="last_name" enabled="false"/>
+            <g:HTML>
+            <br>Имя</br>
+            </g:HTML>
+            <g:TextBox ui:field="first_name" enabled="false"/>
+            <g:HTML>
+            <br>Email</br>
+            </g:HTML>
+            <g:TextBox ui:field="email" enabled="false"/>
+            <g:HTML>
+            <br>Телефон</br>
+            </g:HTML>
+            <g:TextBox ui:field="phone" enabled="false"/>
+        </g:VerticalPanel>
+    </g:HorizontalPanel>
+
+
+</ui:UiBinder>

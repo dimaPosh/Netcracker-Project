@@ -26,7 +26,14 @@ public interface IProductService {
      * @param category the category
      * @return the all
      */
-    List<ProductDto> getAll(int category);
+    List<ProductDto> getAllById(int category);
+
+    /**
+     * Gets all.
+     *
+     * @return the all
+     */
+    List<ProductDto> getAll();
 
     /**
      * Create product dto.

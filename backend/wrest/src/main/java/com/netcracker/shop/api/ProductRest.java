@@ -59,14 +59,23 @@ public class ProductRest {
      */
     @CrossOrigin
     @GetMapping(path = "/all/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    List<ProductDto> getAll(@PathVariable("id") int category) {
-        List<ProductDto> productDtos = service.getAll(category);
+    List<ProductDto> getAllById(@PathVariable("id") int category) {
+        List<ProductDto> productDtos = service.getAllById(category);
         if (productDtos == null) {
             throw new NotFoundException();
         }
         return productDtos;
     }
 
+    @CrossOrigin
+    @GetMapping(path = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
+    List<ProductDto> getAll(){
+        List<ProductDto> productDtos = service.getAll();
+        if (productDtos==null){
+            throw new NotFoundException();
+        }
+        return productDtos;
+    }
     /**
      * Create product dto.
      *

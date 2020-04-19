@@ -4,28 +4,28 @@ import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.netcracker.shop.client.AppConstants;
 import com.netcracker.shop.client.ClientFactory;
-import com.netcracker.shop.client.mvp.view.IContactsView;
+import com.netcracker.shop.client.mvp.view.ICartView;
 
 /**
- * The type Contacts activity.
+ * The type Cart activity.
  */
-public class ContactsActivity extends AbstractMainActivity implements IContactsView.IContactsPresenter {
+public class CartActivity extends AbstractMainActivity implements ICartView.ICartPresenter {
     private ClientFactory clientFactory;
 
     /**
-     * Instantiates a new Contacts activity.
+     * Instantiates a new Cart activity.
      *
      * @param clientFactory the client factory
      */
-    public ContactsActivity(ClientFactory clientFactory) {
+    public CartActivity(ClientFactory clientFactory) {
         this.clientFactory = clientFactory;
     }
 
     @Override
     public void start(AcceptsOneWidget container, EventBus eventBus) {
-        applyCurrentLinkStyle(AppConstants.CONTACTS_LINK_ID);
+        applyCurrentLinkStyle(AppConstants.CART_LINK_ID);
 
-        final IContactsView view = clientFactory.getContactsView();
+        final ICartView view = clientFactory.getCartView();
         view.setPresenter(this);
         container.setWidget(view.asWidget());
     }

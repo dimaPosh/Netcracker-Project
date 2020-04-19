@@ -1,6 +1,11 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:m="urn:import:gwt.material.design.client.ui"
              xmlns:g='urn:import:com.google.gwt.user.client.ui'>
-    <g:FlexTable ui:field="flexTable">
-    </g:FlexTable>
+    <g:VerticalPanel>
+        <g:FlexTable ui:field="flexTable">
+
+        </g:FlexTable>
+    </g:VerticalPanel>
+
 
 </ui:UiBinder>

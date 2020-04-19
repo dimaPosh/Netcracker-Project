@@ -45,9 +45,15 @@ public class ProductServiceImpl implements IProductService {
     }
 
     @Override
-    public List<ProductDto> getAll(int category) {
+    public List<ProductDto> getAllById(int category) {
         return mapper.toGetDto(repository.findByCategoryId(category));
     }
+
+    @Override
+    public List<ProductDto> getAll() {
+        return mapper.toGetDto(repository.findAll());
+    }
+
 
     @Override
     public ProductDto createProduct(ProductDto productDto) {

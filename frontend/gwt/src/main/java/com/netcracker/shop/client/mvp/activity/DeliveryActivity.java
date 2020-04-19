@@ -4,20 +4,28 @@ import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.netcracker.shop.client.AppConstants;
 import com.netcracker.shop.client.ClientFactory;
-import com.netcracker.shop.client.mvp.view.ITasksView;
+import com.netcracker.shop.client.mvp.view.IDeliveryView;
 
-public class TasksActivity extends AbstractMainActivity implements ITasksView.ITasksPresenter {
+/**
+ * The type Delivery activity.
+ */
+public class DeliveryActivity extends AbstractMainActivity implements IDeliveryView.IDeliveryPresenter {
     private ClientFactory clientFactory;
 
-    public TasksActivity(ClientFactory clientFactory) {
+    /**
+     * Instantiates a new Delivery activity.
+     *
+     * @param clientFactory the client factory
+     */
+    public DeliveryActivity(ClientFactory clientFactory) {
         this.clientFactory = clientFactory;
     }
 
     @Override
     public void start(AcceptsOneWidget container, EventBus eventBus) {
-        applyCurrentLinkStyle(AppConstants.TASKS_LINK_ID);
+        applyCurrentLinkStyle(AppConstants.DELIVERY_LINK_ID);
 
-        final ITasksView view = clientFactory.getTasksView();
+        final IDeliveryView view = clientFactory.getDeliveryView();
         view.setPresenter(this);
         container.setWidget(view.asWidget());
     }

@@ -1,5 +1,4 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
-             xmlns:m="urn:import:gwt.material.design.client.ui"
              xmlns:g='urn:import:com.google.gwt.user.client.ui'>
     <g:DockLayoutPanel unit="PX">
         <g:north size="80">
@@ -10,10 +9,13 @@
 
         <g:west size="200">
             <g:HTMLPanel styleName="b-app-navigator">
-                <a id="mail-view" href="#mail:">Mail</a>
-                <a id="contacts-view" href="#contacts:">Contacts</a>
-                <a id="tasks-view" href="#tasks:">Tasks</a>
-                <a id="product-view" href="#product:">Product</a>
+
+                <a id="home-view" href="#home:">Главная</a>
+                <a id="account-view" href="#account:">Личный кабинет</a>
+                <a id="product-view" href="#product:">Магазин</a>
+                <a id="cart-view" href="#cart:">Корзина</a>
+                <a id="delivery-view" href="#delivery-payment:">Доставка и оплата</a>
+                <a id="contacts-view" href="#contacts:">Контакты</a>
             </g:HTMLPanel>
         </g:west>
 

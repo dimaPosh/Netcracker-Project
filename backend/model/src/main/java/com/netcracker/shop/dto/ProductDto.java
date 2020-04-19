@@ -12,7 +12,7 @@ public class ProductDto {
     private String name;
     private Float price;
     private String description;
-    private byte[] image;
+    private String image;
     private Integer count;
     private CategoryDto category;
 
@@ -33,7 +33,7 @@ public class ProductDto {
      * @param count       the count
      * @param category    the category dto
      */
-    public ProductDto(Integer id, String name, Float price, String description, byte[] image, Integer count, CategoryDto category) {
+    public ProductDto(Integer id, String name, Float price, String description, String image, Integer count, CategoryDto category) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -120,7 +120,7 @@ public class ProductDto {
      *
      * @return the byte [ ]
      */
-    public byte[] getImage() {
+    public String getImage() {
         return image;
     }
 
@@ -129,7 +129,7 @@ public class ProductDto {
      *
      * @param image the image
      */
-    public void setImage(byte[] image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

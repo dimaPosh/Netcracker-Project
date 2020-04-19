@@ -17,7 +17,9 @@ import com.google.gwt.user.client.ui.SimplePanel;
 import com.netcracker.shop.client.layout.AppLayout;
 import com.netcracker.shop.client.mvp.DemoActivityMapper;
 import com.netcracker.shop.client.mvp.DemoPlaceHistoryMapper;
-import com.netcracker.shop.client.mvp.place.MailPlace;
+import com.netcracker.shop.client.mvp.place.AccountPlace;
+import com.netcracker.shop.client.mvp.place.HomePlace;
+import com.netcracker.shop.server.model.RoleModel;
 import org.fusesource.restygwt.client.Defaults;
 
 /**
@@ -30,8 +32,46 @@ public final class StartPoint implements EntryPoint {
     /**
      * Injector field.
      */
+    private static Integer userId = null;
+    private static RoleModel role = RoleModel.USER;
     private SimplePanel containerWidget;
-    private MailPlace defaultPlace = new MailPlace();
+    private HomePlace defaultPlace = new HomePlace();
+
+    /**
+     * Gets user id.
+     *
+     * @return the user id
+     */
+    public static Integer getUserId() {
+        return userId;
+    }
+
+    /**
+     * Sets user id.
+     *
+     * @param userId the user id
+     */
+    public static void setUserId(Integer userId) {
+        StartPoint.userId = userId;
+    }
+
+    /**
+     * Gets role.
+     *
+     * @return the role
+     */
+    public static RoleModel getRole() {
+        return role;
+    }
+
+    /**
+     * Sets role.
+     *
+     * @param role the role
+     */
+    public static void setRole(RoleModel role) {
+        StartPoint.role = role;
+    }
 
     /**
      * Constructor. Create an injector.
@@ -59,6 +99,6 @@ public final class StartPoint implements EntryPoint {
 
         RootLayoutPanel.get().add(mainLayout);
 
-        History.newItem("mail:");
+        History.newItem("home:");
     }
 }
