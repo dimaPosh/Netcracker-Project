@@ -4,18 +4,23 @@ import com.google.gwt.activity.shared.Activity;
 import com.google.gwt.activity.shared.ActivityMapper;
 import com.google.gwt.place.shared.Place;
 import com.netcracker.shop.client.ClientFactory;
+import com.netcracker.shop.client.StartPoint;
+import com.netcracker.shop.client.mvp.activity.AuthActivity;
 import com.netcracker.shop.client.mvp.activity.CartActivity;
 import com.netcracker.shop.client.mvp.activity.ContactsActivity;
 import com.netcracker.shop.client.mvp.activity.AccountActivity;
 import com.netcracker.shop.client.mvp.activity.HomeActivity;
 import com.netcracker.shop.client.mvp.activity.ProductActivity;
 import com.netcracker.shop.client.mvp.activity.DeliveryActivity;
+import com.netcracker.shop.client.mvp.activity.RegistrationActivity;
+import com.netcracker.shop.client.mvp.place.AuthPlace;
 import com.netcracker.shop.client.mvp.place.CartPlace;
 import com.netcracker.shop.client.mvp.place.ContactsPlace;
 import com.netcracker.shop.client.mvp.place.AccountPlace;
 import com.netcracker.shop.client.mvp.place.HomePlace;
 import com.netcracker.shop.client.mvp.place.ProductPlace;
 import com.netcracker.shop.client.mvp.place.DeliveryPlace;
+import com.netcracker.shop.client.mvp.place.RegistrationPlace;
 
 /**
  * The type Demo activity mapper.
@@ -37,6 +42,8 @@ public class DemoActivityMapper implements ActivityMapper {
     public Activity getActivity(Place place) {
         if (place instanceof AccountPlace) {
             return new AccountActivity(clientFactory);
+        } else if (place instanceof AuthPlace) {
+            return new AuthActivity(clientFactory);
         } else if (place instanceof ContactsPlace) {
             return new ContactsActivity(clientFactory);
         } else if (place instanceof DeliveryPlace) {
@@ -45,8 +52,10 @@ public class DemoActivityMapper implements ActivityMapper {
             return new ProductActivity(clientFactory);
         } else if (place instanceof HomePlace) {
             return new HomeActivity(clientFactory);
-        } else if(place instanceof CartPlace){
+        } else if (place instanceof CartPlace) {
             return new CartActivity(clientFactory);
+        } else if (place instanceof RegistrationPlace) {
+            return new RegistrationActivity(clientFactory);
         }
         return null;
     }

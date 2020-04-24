@@ -29,11 +29,11 @@ public class CartDetail {
     @Column(name = "CART_DETAILS_ID")
     private Integer id;
 
-    @ManyToOne(cascade = {CascadeType.PERSIST})
+    @ManyToOne(cascade = {CascadeType.DETACH})
     @JoinColumn(name = "CART_ID", foreignKey = @ForeignKey(name = "CA_ID_FK"))
     private Cart cart;
 
-    @OneToOne(cascade = {CascadeType.ALL})
+    @OneToOne(cascade = {CascadeType.DETACH})
     @JoinColumn(name = "PRODUCT_ID", foreignKey = @ForeignKey(name = "PROD_ID_FK"))
     private Product product;
 

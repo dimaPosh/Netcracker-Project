@@ -10,6 +10,7 @@ public class ProductModel {
     private String description;
     private String image;
     private Integer count;
+    private CategoryModel category;
 
     /**
      * Instantiates a new Product model.
@@ -26,14 +27,19 @@ public class ProductModel {
      * @param description the description
      * @param image       the image
      * @param count       the count
+     * @param category    the category
      */
-    public ProductModel(Integer id, String name, Float price, String description, String image, Integer count) {
+    public ProductModel(Integer id, String name,
+                        Float price, String description,
+                        String image, Integer count,
+                        CategoryModel category) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.description = description;
         this.image = image;
         this.count = count;
+        this.category = category;
     }
 
     /**
@@ -142,5 +148,23 @@ public class ProductModel {
      */
     public void setCount(Integer count) {
         this.count = count;
+    }
+
+    /**
+     * Gets category.
+     *
+     * @return the category
+     */
+    public CategoryModel getCategory() {
+        return category;
+    }
+
+    /**
+     * Sets category.
+     *
+     * @param category the category
+     */
+    public void setCategory(CategoryModel category) {
+        this.category = category;
     }
 }

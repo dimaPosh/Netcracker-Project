@@ -22,6 +22,7 @@ public class CartDetailServiceImpl implements ICartDetailService {
 
     @Autowired
     private final ICartDetailMapper mapper;
+
     @Autowired
     private final ICartDetailRepository repository;
 
@@ -47,7 +48,7 @@ public class CartDetailServiceImpl implements ICartDetailService {
 
     @Override
     public List<CartDetailDto> getAll(int cart) {
-        return mapper.toGetDto(repository.findAll());
+        return mapper.toGetDto(repository.findAllByCart_Id(cart));
     }
 
     @Override
@@ -55,6 +56,15 @@ public class CartDetailServiceImpl implements ICartDetailService {
         CartDetail f = mapper.fromDto(cartDetailDto);
         f = repository.save(f);
         cartDetailDto.setId(f.getId());
+        return cartDetailDto;
+    }
+
+    @Override
+    public CartDetailDto deleteCartDetail(Integer id) {
+        CartDetailDto cartDetailDto = mapper.toDto(repository.findById(id).orElse(null));
+        if (cartDetailDto != null) {
+            repository.deleteById(id);
+        }
         return cartDetailDto;
     }
 }

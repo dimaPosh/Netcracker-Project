@@ -52,7 +52,7 @@ public class User {
     @JoinColumn(name = "ROLE_ID", foreignKey = @ForeignKey(name = "US_R_ID_FK"),  nullable = false)
     private Role role;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.DETACH)
     @JoinColumn(name = "ADDRESS_ID", foreignKey = @ForeignKey(name = "US_AD_FK"))
     private Address address;
 

@@ -11,6 +11,9 @@ public class UserModel {
     private String last_name;
     private String email;
     private String phone_number;
+    private Integer role;
+    private AddressModel address;
+    private CartModel cart;
 
     /**
      * Instantiates a new User model.
@@ -28,10 +31,13 @@ public class UserModel {
      * @param last_name    the last name
      * @param email        the email
      * @param phone_number the phone number
+     * @param address      the address
+     * @param role         the role
+     * @param cart         the cart
      */
     public UserModel(Integer id, String login, String password,
                      String first_name, String last_name,
-                     String email, String phone_number) {
+                     String email, String phone_number, AddressModel address, Integer role, CartModel cart) {
         this.id = id;
         this.login = login;
         this.password = password;
@@ -39,6 +45,9 @@ public class UserModel {
         this.last_name = last_name;
         this.email = email;
         this.phone_number = phone_number;
+        this.address = address;
+        this.role = role;
+        this.cart = cart;
     }
 
     /**
@@ -165,5 +174,59 @@ public class UserModel {
      */
     public void setPhone_number(String phone_number) {
         this.phone_number = phone_number;
+    }
+
+    /**
+     * Gets address.
+     *
+     * @return the address
+     */
+    public AddressModel getAddress() {
+        return address;
+    }
+
+    /**
+     * Sets address.
+     *
+     * @param address the address
+     */
+    public void setAddress(AddressModel address) {
+        this.address = address;
+    }
+
+    /**
+     * Gets role.
+     *
+     * @return the role
+     */
+    public Integer getRole() {
+        return role;
+    }
+
+    /**
+     * Sets role.
+     *
+     * @param role the role
+     */
+    public void setRole(Integer role) {
+        this.role = role;
+    }
+
+    /**
+     * Gets cart.
+     *
+     * @return the cart
+     */
+    public CartModel getCart() {
+        return cart;
+    }
+
+    /**
+     * Sets cart.
+     *
+     * @param cart the cart
+     */
+    public void setCart(CartModel cart) {
+        this.cart = cart;
     }
 }

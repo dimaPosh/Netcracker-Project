@@ -37,4 +37,12 @@ public interface ICartDetailService {
      */
     CartDetailDto createCartDetail(CartDetailDto cartDetailDto);
 
+
+    /**
+     * Delete cart detail string.
+     *
+     * @param id the id
+     * @return the string
+     */
+    CartDetailDto deleteCartDetail(Integer id);
 }

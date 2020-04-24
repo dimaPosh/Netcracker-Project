@@ -2,12 +2,14 @@ package com.netcracker.shop.client;
 
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.PlaceController;
+import com.netcracker.shop.client.mvp.view.IAuthView;
 import com.netcracker.shop.client.mvp.view.ICartView;
 import com.netcracker.shop.client.mvp.view.IContactsView;
 import com.netcracker.shop.client.mvp.view.IAccountView;
 import com.netcracker.shop.client.mvp.view.IHomeView;
 import com.netcracker.shop.client.mvp.view.IProductView;
 import com.netcracker.shop.client.mvp.view.IDeliveryView;
+import com.netcracker.shop.client.mvp.view.IRegistrationView;
 
 /**
  * The interface Client factory.
@@ -68,4 +70,19 @@ public interface ClientFactory {
      * @return the cart view
      */
     public ICartView getCartView();
+
+    /**
+     * Gets auth view.
+     *
+     * @return the auth view
+     */
+    public IAuthView getAuthView();
+
+
+    /**
+     * Gets registr view.
+     *
+     * @return the registr view
+     */
+    public IRegistrationView getRegistrView();
 }

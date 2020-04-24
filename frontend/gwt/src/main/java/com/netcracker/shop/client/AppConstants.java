@@ -28,4 +28,14 @@ public final class AppConstants {
      * The constant CART_LINK_ID.
      */
     public static final String CART_LINK_ID = "cart-view";
+
+    /**
+     * The constant AUTH_LINK_ID.
+     */
+    public static final String AUTH_LINK_ID = "auth-view";
+
+    /**
+     * The constant REGISTR_LINK_ID.
+     */
+    public static final String REGISTR_LINK_ID = "registr-view";
 }

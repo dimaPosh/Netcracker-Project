@@ -59,7 +59,6 @@ public class CartRest {
     @CrossOrigin
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     CartDto create(@RequestBody CartDto cartDto) {
-        CartDto cartDto1 = cartDto;
         return service.createCart(cartDto);
     }
 }

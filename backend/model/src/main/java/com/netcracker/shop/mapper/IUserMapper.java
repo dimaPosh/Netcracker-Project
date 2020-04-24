@@ -4,9 +4,8 @@
 
 package com.netcracker.shop.mapper;
 
-import com.netcracker.shop.db.entity.Role;
+
 import com.netcracker.shop.db.entity.User;
-import com.netcracker.shop.dto.RoleDto;
 import com.netcracker.shop.dto.UserDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -27,6 +26,7 @@ public interface IUserMapper {
      */
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "cart.id", ignore = false)
+    @Mapping(target = "address.id", ignore = false)
     User fromDto(UserDto userDto);
 
     /**
@@ -35,6 +35,7 @@ public interface IUserMapper {
      * @param user the user
      * @return the user dto
      */
+    @Mapping(target = "password", ignore = true)
     UserDto toDto(User user);
 
     /**

@@ -76,7 +76,7 @@ public class UserRest {
     @CrossOrigin
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     UserDto create(@RequestBody UserDto userDto) {
-        userDto.setRole(RoleDto.ADMIN);
+        userDto.setRole(RoleDto.USER);
         return service.createUser(userDto);
     }
 }

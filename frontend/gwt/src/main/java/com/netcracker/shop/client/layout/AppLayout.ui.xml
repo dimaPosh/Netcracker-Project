@@ -1,26 +1,26 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
              xmlns:g='urn:import:com.google.gwt.user.client.ui'>
-    <g:DockLayoutPanel unit="PX">
-        <g:north size="80">
-            <g:HTMLPanel styleName="b-app-header">
-                Онлайн магазин на диване "У ВАСИЛИЧА"
-            </g:HTMLPanel>
-        </g:north>
+        <g:DockLayoutPanel unit="PX">
+            <g:north size="80">
+                <g:HTMLPanel styleName="b-app-header">
+                    Онлайн магазин на диване "У ВАСИЛИЧА"
+                </g:HTMLPanel>
+            </g:north>
 
-        <g:west size="200">
-            <g:HTMLPanel styleName="b-app-navigator">
+            <g:west size="200">
+                <g:HTMLPanel styleName="b-app-navigator">
 
-                <a id="home-view" href="#home:">Главная</a>
-                <a id="account-view" href="#account:">Личный кабинет</a>
-                <a id="product-view" href="#product:">Магазин</a>
-                <a id="cart-view" href="#cart:">Корзина</a>
-                <a id="delivery-view" href="#delivery-payment:">Доставка и оплата</a>
-                <a id="contacts-view" href="#contacts:">Контакты</a>
-            </g:HTMLPanel>
-        </g:west>
+                    <a id="home-view" href="#home:">Главная</a>
+                    <a id="account-view" href="#account:">Личный кабинет</a>
+                    <a id="product-view" href="#product:">Магазин</a>
+                    <a id="cart-view" href="#cart:">Корзина</a>
+                    <a id="delivery-view" href="#delivery-payment:">Доставка и оплата</a>
+                    <a id="contacts-view" href="#contacts:">Контакты</a>
+                </g:HTMLPanel>
+            </g:west>
 
-        <g:center>
-            <g:ScrollPanel  styleName="b-app-content" ui:field="appContent"/>
-        </g:center>
-    </g:DockLayoutPanel>
+            <g:center>
+                <g:ScrollPanel styleName="b-app-content" ui:field="appContent"/>
+            </g:center>
+        </g:DockLayoutPanel>
 </ui:UiBinder>

@@ -19,6 +19,7 @@ import com.netcracker.shop.client.mvp.DemoActivityMapper;
 import com.netcracker.shop.client.mvp.DemoPlaceHistoryMapper;
 import com.netcracker.shop.client.mvp.place.AccountPlace;
 import com.netcracker.shop.client.mvp.place.HomePlace;
+import com.netcracker.shop.server.model.CartModel;
 import com.netcracker.shop.server.model.RoleModel;
 import org.fusesource.restygwt.client.Defaults;
 
@@ -33,7 +34,8 @@ public final class StartPoint implements EntryPoint {
      * Injector field.
      */
     private static Integer userId = null;
-    private static RoleModel role = RoleModel.USER;
+    private static Integer role = 2;
+    private static CartModel cart = null;
     private SimplePanel containerWidget;
     private HomePlace defaultPlace = new HomePlace();
 
@@ -60,7 +62,7 @@ public final class StartPoint implements EntryPoint {
      *
      * @return the role
      */
-    public static RoleModel getRole() {
+    public static Integer getRole() {
         return role;
     }
 
@@ -69,8 +71,28 @@ public final class StartPoint implements EntryPoint {
      *
      * @param role the role
      */
-    public static void setRole(RoleModel role) {
+    public static void setRole(Integer role) {
         StartPoint.role = role;
+    }
+
+
+    /**
+     * Gets cart.
+     *
+     * @return the cart
+     */
+    public static CartModel getCart() {
+        return cart;
+    }
+
+
+    /**
+     * Sets cart.
+     *
+     * @param cart the cart
+     */
+    public static void setCart(CartModel cart) {
+        StartPoint.cart = cart;
     }
 
     /**

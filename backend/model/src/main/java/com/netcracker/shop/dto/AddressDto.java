@@ -4,10 +4,13 @@
 
 package com.netcracker.shop.dto;
 
+import javax.validation.Valid;
+
 /**
  * The type Address dto.
  */
 public class AddressDto {
+
     private Integer id;
 
     private String apartment;

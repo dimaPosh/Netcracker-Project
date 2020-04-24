@@ -23,6 +23,8 @@ public interface ICartDetailMapper {
      * @return the cart detail
      */
     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "cart.id", ignore = false)
+    @Mapping(target = "product.id", ignore = false)
     CartDetail fromDto(CartDetailDto cartDetailDto);
 
     /**

@@ -2,33 +2,28 @@ package com.netcracker.shop.client.mvp.view.product;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.Window;
-import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HTML;
-import com.google.gwt.user.client.ui.HTMLTable;
-import com.google.gwt.user.client.ui.HorizontalPanel;
-import com.google.gwt.user.client.ui.Image;
-import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
+import com.netcracker.shop.client.StartPoint;
 import com.netcracker.shop.client.mvp.view.IProductView;
+import com.netcracker.shop.server.model.CartDetailModel;
 import com.netcracker.shop.server.model.ProductModel;
+import com.netcracker.shop.server.rest.CartDetailRest;
 import com.netcracker.shop.server.rest.ProductRest;
 import gwt.material.design.client.constants.IconType;
 import gwt.material.design.client.ui.MaterialButton;
 import gwt.material.design.client.ui.MaterialImage;
-import gwt.material.design.client.ui.MaterialPanel;
-import gwt.material.design.client.ui.MaterialTextBox;
-import gwt.material.design.client.ui.MaterialTitle;
+import gwt.material.design.client.ui.MaterialToast;
 import org.fusesource.restygwt.client.Method;
 import org.fusesource.restygwt.client.MethodCallback;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -42,6 +37,7 @@ public class ProductView extends Composite implements IProductView {
     @UiField
     protected FlexTable flexTable;
     private IProductPresenter presenter;
+    private final CartDetailRest cartDetailRest;
     private final ProductRest rest;
     private List<ProductModel> productModel;
 
@@ -64,11 +60,12 @@ public class ProductView extends Composite implements IProductView {
      */
     public ProductView() {
         this.rest = GWT.create(ProductRest.class);
+        this.cartDetailRest = GWT.create(CartDetailRest.class);
         this.rest.productAll(new MethodCallback<List<ProductModel>>() {
 
             @Override
             public void onFailure(Method method, Throwable throwable) {
-                Window.alert("Error: " + throwable.getMessage());
+                MaterialToast.fireToast("Продукты не найдены", 1000);
             }
 
             @Override
@@ -87,6 +84,27 @@ public class ProductView extends Composite implements IProductView {
                         verticalPanel.add(new HTML("<h5><h5>" + model.get(j).getPrice().toString() + "₽"));
                         MaterialButton button = new MaterialButton("Добавить");
                         button.setIconType(IconType.ADD_SHOPPING_CART);
+                        int finalJ = j;
+                        button.addClickHandler(new ClickHandler() {
+                            @Override
+                            public void onClick(ClickEvent clickEvent) {
+                                CartDetailModel cartDetailModel = new CartDetailModel();
+                                cartDetailModel.setId(1000);
+                                cartDetailModel.setCart(StartPoint.getCart());
+                                cartDetailModel.setProduct(model.get(finalJ));
+                                cartDetailRest.createCartDetail(cartDetailModel, new MethodCallback<CartDetailModel>() {
+                                    @Override
+                                    public void onFailure(Method method, Throwable throwable) {
+                                        MaterialToast.fireToast("Упс, что-то полшо не так...", 500);
+                                    }
+
+                                    @Override
+                                    public void onSuccess(Method method, CartDetailModel cartDetailModel) {
+                                        MaterialToast.fireToast("Добавлено", 500);
+                                    }
+                                });
+                            }
+                        });
                         verticalPanel.add(button);
                         j++;
                         flexTable.setWidget(i, j - i, verticalPanel);

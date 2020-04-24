@@ -1,9 +1,49 @@
 /*#336699
  * Copyright
  */
-.b-app-header {font-family: Monotype Corsiva; font-size: 30px; font-weight: bold; color: #5ab1f6 ;margin-left: 10px}
-.b-app-navigator {padding-top: 100px; padding-left: 10px;}
-.b-app-navigator a {text-decoration: none; font-weight: bold; color: #5ab1f6; position: relative; clear: left; float: left; width: 100%; margin-bottom: 15px; padding: 5px 0 5px 15px;}
-.b-app-navigator a:hover { text-decoration: underline;}
-.b-app-navigator .b-current { color: #ffffff; background-color: #5ab1f6; -moz-border-radius: 3px 0 0 3px; -webkit-border-radius: 3px 0 0 3px; -o-border-radius: 3px 0 0 3px; border-radius: 3px 0 0 3px;}
-.b-app-content { margin: 50px 50px 50px 50px;}
+.b-app-header {
+    font-family: Monotype Corsiva;
+    font-size: 30px;
+    font-weight: bold;
+    color: #5ab1f6;
+    margin-left: 10px
+}
+
+.b-app-navigator {
+    padding-top: 100px;
+    padding-left: 10px;
+}
+
+.b-app-navigator a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #5ab1f6;
+    position: relative;
+    clear: left;
+    float: left;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 5px 0 5px 15px;
+}
+
+.b-app-navigator a:hover {
+    text-decoration: underline;
+}
+
+.b-app-navigator .b-current {
+    color: #ffffff;
+    background-color: #5ab1f6;
+    -moz-border-radius: 3px 0 0 3px;
+    -webkit-border-radius: 3px 0 0 3px;
+    -o-border-radius: 3px 0 0 3px;
+    border-radius: 3px 0 0 3px;
+}
+
+.b-app-content {
+    margin: 50px 50px 50px 50px;
+}
+
+.home {
+    margin-bottom: 50px;
+    margin-left: 50px;
+}
